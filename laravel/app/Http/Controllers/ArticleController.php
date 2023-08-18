@@ -8,7 +8,7 @@ use App\Models\Article;
 class ArticleController extends Controller
 {
     public function get_data(Request $request){
-        $blog = Article::ALL();
+        $blog = Article::paginate($request->perPage);
         $json['blog']=$blog;
         return response()->json($json);
     }
