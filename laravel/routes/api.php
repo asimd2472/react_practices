@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/getallblog',[ArticleController::class,'get_data'])->name('get_data');
 Route::get('/get_dataupdate/{id}',[ArticleController::class,'get_dataupdate'])->name('get_dataupdate');
+Route::get('/blogdetails',[ArticleController::class,'blogdetails'])->name('blogdetails');

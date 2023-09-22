@@ -70,10 +70,12 @@ export default function Home() {
   return (
     <div>
         <section className="container">
-            <div className='row'>
+            <div className='row mt-5'>
                 {preLoading && <Preloader/>}
 
                 {items && items.map((post, keys) => (
+                    
+                    
                     <div className="col-lg-4 card-container" key={keys}>
                         <div className="card-image">
                             
@@ -92,7 +94,8 @@ export default function Home() {
                                 {post.title}
                             </h1>
                             <p className="card-subtitle">
-                                {post.blogdesc}
+                                {/* {post.blogdesc} */}
+                                {post.blogdesc.split(' ').slice(0, 18).join(' ')} ...
                             </p>
                             <div className="card-author">
                                 <img src={`${imageURL}${post.blogimage}`} alt={post.title} loading="lazy"/>

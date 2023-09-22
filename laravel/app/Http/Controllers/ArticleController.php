@@ -17,4 +17,10 @@ class ArticleController extends Controller
         $articles = Article::where('id', $id)->first();
         return response()->json($articles);
     }
+
+    public function blogdetails(Request $request){
+        $slug = $request->slug;
+        $articles = Article::where('slug', $slug)->first();
+        return response()->json($articles);
+    }
 }

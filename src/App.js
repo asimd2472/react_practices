@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import './App.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
@@ -10,17 +11,21 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true);
 
+  
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 500);
+    
   }, []);
 
 
   return (
     <div className="App">
         <RoutesWeb/>
-        {isLoading ? <Loader /> : ''}
+        
+        {/* {isLoading ? <Loader /> : ''} */}
     </div>
   );
 }
